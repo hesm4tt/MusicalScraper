@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Command-line launcher. The double-clickable app is the .app / .exe build.
+cd "$(dirname "$0")"
+if [ ! -x .venv/bin/python ]; then
+  echo "First run: setting up..." >&2
+  ./setup.sh >/dev/null || { echo "setup failed; run ./setup.sh to see why" >&2; exit 1; }
+fi
+exec ./.venv/bin/python musical_scraper.py "$@"

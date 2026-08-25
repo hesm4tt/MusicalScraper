@@ -1,0 +1,10 @@
+.venv/
+.venv313/
+.venv-build/
+build/
+dist/
+downloads/
+__pycache__/
+*.pyc
+*.spec.bak
+.DS_Store

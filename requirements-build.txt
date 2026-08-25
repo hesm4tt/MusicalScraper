@@ -1,0 +1,3 @@
+# Build-time only. Runtime deps live in requirements.txt.
+pyinstaller>=6.10
+pillow>=10.0        # regenerating assets/icon.* (not needed for a normal build)

@@ -1,0 +1,2 @@
+yt-dlp>=2025.10.14
+curl_cffi>=0.7          # browser impersonation; TikTok blocks plain requests more often without it
