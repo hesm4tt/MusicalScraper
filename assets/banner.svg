@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="440" viewBox="0 0 1280 440" role="img" aria-labelledby="title desc">
+  <title id="title">Musical Scraper</title>
+  <desc id="desc">A TikTok profile archiver with caption names, clean video files, and chronological folders.</desc>
+  <defs>
+    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8323d"/>
+      <stop offset=".53" stop-color="#f45a26"/>
+      <stop offset="1" stop-color="#ffad27"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff3df" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#fffdf8" stop-opacity=".82"/>
+    </linearGradient>
+    <filter id="shadow" x="-.2" y="-.2" width="1.4" height="1.5">
+      <feDropShadow dx="0" dy="12" stdDeviation="13" flood-color="#6d2414" flood-opacity=".22"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="440" rx="30" fill="url(#warm)"/>
+  <circle cx="1100" cy="-10" r="270" fill="#ffd16a" opacity=".17"/>
+  <circle cx="1190" cy="380" r="220" fill="#c82037" opacity=".13"/>
+  <path d="M0 354C240 290 387 453 638 385s380-96 642-9v64H0z" fill="#8a2921" opacity=".12"/>
+
+  <!-- Brand mark -->
+  <g transform="translate(70 66)">
+    <rect width="58" height="58" rx="18" fill="#fff" opacity=".19"/>
+    <path d="M34 12v25.5a10 10 0 1 1-6-9.2V8l20-4v24" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <ellipse cx="26" cy="39" rx="8" ry="5.2" transform="rotate(-20 26 39)" fill="#fff"/>
+    <ellipse cx="48" cy="30" rx="8" ry="5.2" transform="rotate(-20 48 30)" fill="#fff"/>
+  </g>
+
+  <text x="70" y="176" fill="#fff7e8" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="18" font-weight="750" letter-spacing="3.4">TIKTOK PROFILE ARCHIVER</text>
+  <text x="66" y="247" fill="#fff" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="62" font-weight="800" letter-spacing="-2.4">Musical Scraper</text>
+  <text x="70" y="294" fill="#fff8eb" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="25" font-weight="500">Your archive, in order.</text>
+
+  <g transform="translate(70 330)">
+    <rect width="172" height="38" rx="19" fill="#fff" opacity=".2"/>
+    <circle cx="21" cy="19" r="5" fill="#fff3c4"/>
+    <text x="37" y="24" fill="#fff" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="13" font-weight="700" letter-spacing=".55">CLEAN VIDEO FILES</text>
+    <rect x="184" width="156" height="38" rx="19" fill="#fff" opacity=".2"/>
+    <path d="M202 14v11m-5.5-5.5h11" stroke="#fff3c4" stroke-width="2.3" stroke-linecap="round"/>
+    <text x="222" y="24" fill="#fff" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="13" font-weight="700" letter-spacing=".55">OLDEST FIRST</text>
+  </g>
+
+  <!-- Floating archive cards -->
+  <g filter="url(#shadow)" transform="translate(750 63)">
+    <g transform="rotate(7 220 160)" opacity=".7">
+      <rect x="50" y="18" width="384" height="288" rx="22" fill="#7d241d"/>
+    </g>
+    <g transform="rotate(3 220 160)">
+      <rect x="28" y="10" width="384" height="288" rx="22" fill="#fff8ef"/>
+      <rect x="50" y="32" width="58" height="58" rx="18" fill="url(#warm)"/>
+      <path d="M79 44v25a9 9 0 1 1-6-8.6V40l19-4v24" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="71" cy="70" rx="7" ry="4.5" transform="rotate(-20 71 70)" fill="#fff"/>
+      <ellipse cx="91" cy="61" rx="7" ry="4.5" transform="rotate(-20 91 61)" fill="#fff"/>
+      <text x="126" y="57" fill="#45251b" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="18" font-weight="750">Profile archive</text>
+      <text x="126" y="79" fill="#a28572" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="13">3,320 videos · oldest first</text>
+      <path d="M50 111h340" stroke="#eddfd1"/>
+
+      <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+        <rect x="49" y="130" width="342" height="45" rx="11" fill="#fff"/>
+        <circle cx="72" cy="152" r="13" fill="#fff0d9"/>
+        <path d="M69 146l10 6-10 6z" fill="#f04b30"/>
+        <text x="96" y="149" fill="#503324" font-size="13" font-weight="650">summer memories #lipsync</text>
+        <text x="96" y="166" fill="#b2947e" font-size="10.5">JUN 27, 2015</text>
+        <path d="M369 151l5 5 9-11" fill="none" stroke="#58a66a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <rect x="49" y="184" width="342" height="45" rx="11" fill="#fff"/>
+        <circle cx="72" cy="206" r="13" fill="#fff0d9"/>
+        <path d="M69 200l10 6-10 6z" fill="#f04b30"/>
+        <text x="96" y="203" fill="#503324" font-size="13" font-weight="650">back when we were young 💛</text>
+        <text x="96" y="220" fill="#b2947e" font-size="10.5">JUL 03, 2015</text>
+        <path d="M369 205l5 5 9-11" fill="none" stroke="#58a66a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <rect x="49" y="238" width="342" height="40" rx="11" fill="#fff"/>
+        <circle cx="72" cy="258" r="13" fill="#fff0d9"/>
+        <path d="M69 252l10 6-10 6z" fill="#f04b30"/>
+        <text x="96" y="263" fill="#503324" font-size="13" font-weight="650">everyday things #throwback</text>
+        <path d="M369 257l5 5 9-11" fill="none" stroke="#58a66a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+
+    <g transform="translate(354 251) rotate(8)">
+      <rect width="124" height="43" rx="21.5" fill="#fff"/>
+      <circle cx="23" cy="21.5" r="7" fill="#52aa63"/>
+      <path d="M19 21l3 3 6-7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="39" y="26" fill="#4d3024" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="12" font-weight="750">NO WATERMARK</text>
+    </g>
+  </g>
+</svg>

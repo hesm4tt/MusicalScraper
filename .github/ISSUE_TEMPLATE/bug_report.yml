@@ -1,0 +1,48 @@
+name: Bug report
+description: Report a problem with Musical Scraper
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please do not attach videos, cookies, browser data, or private account information.
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: For example, 1.0.0. Find it in the release you downloaded.
+      placeholder: 1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Windows
+        - Linux / running from source
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+      placeholder: A short description of what should have happened.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened?
+      description: Paste the error text if there is one. Remove private usernames or URLs.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: 1. Open the app…
+    validations:
+      required: false
