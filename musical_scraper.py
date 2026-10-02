@@ -202,12 +202,16 @@ def build_filename(caption, username, tag_user=None, ext="mp4",
     return f"{prefix}{caption}{suffix}{ext_suffix}"
 
 
-def dedupe(path_dir: str, name: str, taken: set) -> str:
-    """Two posts can share a caption; keep both."""
+def dedupe(path_dir: str, name: str, taken: set, max_bytes: int = 200) -> str:
+    """Keep duplicate caption names unique without exceeding the byte budget."""
     stem, ext = os.path.splitext(name)
     candidate, n = name, 2
     while candidate.lower() in taken or os.path.exists(os.path.join(path_dir, candidate)):
-        candidate = f"{stem} ({n}){ext}"
+        duplicate_suffix = f" ({n})"
+        stem_budget = max_bytes - len((duplicate_suffix + ext).encode("utf-8"))
+        if stem_budget < 1:
+            raise ValueError("max_bytes must leave room for a duplicate filename and extension")
+        candidate = f"{truncate_bytes(stem, stem_budget)}{duplicate_suffix}{ext}"
         n += 1
     taken.add(candidate.lower())
     return candidate
@@ -774,7 +778,7 @@ def run_job(cfg, log=None, status=None, progress=None, should_stop=None):
             number=i if cfg.number else None, upload_dt=dt, video_id=v["id"],
             extra_tags=cfg.tag, user_tag=cfg.user_tag)
         v["_num"] = i
-        v["filename"] = dedupe(out_dir, name, taken)
+        v["filename"] = dedupe(out_dir, name, taken, max_bytes=cfg.max_bytes)
 
     summary = {"planned": pending, "out_dir": os.path.abspath(out_dir),
                "downloaded": 0, "failed": 0, "cancelled": False,
@@ -834,7 +838,7 @@ def run_job(cfg, log=None, status=None, progress=None, should_stop=None):
             return v["filename"]         # unchanged; don't collide with our own reservation
         with lock:                       # `taken` is shared across threads
             taken.discard((v.get("filename") or "").lower())
-            v["filename"] = dedupe(out_dir, name, taken)
+            v["filename"] = dedupe(out_dir, name, taken, max_bytes=cfg.max_bytes)
         return v["filename"]
 
     api_holder = {"api": None}
