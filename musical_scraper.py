@@ -166,9 +166,31 @@ def build_filename(caption, username, tag_user=None, ext="mp4",
             caption = re.sub(r"\s+", " ",
                              re.sub(pattern, "", caption, flags=re.I)).strip()
 
-    suffix = (" " + " ".join(f"#{t}" for t in tags)) if tags else ""
-
     prefix = f"{number:04d} - " if number is not None else ""
+    ext_suffix = f".{ext}"
+
+    def make_suffix(values):
+        return (" " + " ".join(f"#{tag}" for tag in values)) if values else ""
+
+    # Hashtags are optional suffixes. Drop them from the end when they leave no
+    # room for the caption, so even user-supplied long tags respect max_bytes.
+    while tags and len((prefix + make_suffix(tags) + ext_suffix).encode("utf-8")) >= max_bytes:
+        tags.pop()
+    suffix = make_suffix(tags)
+
+    # Numbering is optional too; keep the extension and a caption within budget.
+    fixed = prefix + suffix + ext_suffix
+    if len(fixed.encode("utf-8")) >= max_bytes and prefix:
+        prefix = ""
+        while tags and len((prefix + make_suffix(tags) + ext_suffix).encode("utf-8")) >= max_bytes:
+            tags.pop()
+        suffix = make_suffix(tags)
+        fixed = prefix + suffix + ext_suffix
+
+    budget = max_bytes - len(fixed.encode("utf-8"))
+    if budget < 1:
+        raise ValueError("max_bytes must leave room for a filename and extension")
+
     if not caption:
         # Captionless posts still need a stable, unique name: date if we know it,
         # otherwise the post id (legacy musical.ly ids carry no decodable date).
@@ -176,11 +198,8 @@ def build_filename(caption, username, tag_user=None, ext="mp4",
                  else (str(video_id) if video_id else "no-caption"))
         caption = f"{handle} {stamp}"
 
-    budget = max_bytes - len((prefix + suffix + "." + ext).encode("utf-8"))
-    if budget < 8:
-        budget = 8
     caption = truncate_bytes(caption, budget)
-    return f"{prefix}{caption}{suffix}.{ext}"
+    return f"{prefix}{caption}{suffix}{ext_suffix}"
 
 
 def dedupe(path_dir: str, name: str, taken: set) -> str:
