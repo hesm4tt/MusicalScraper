@@ -4,6 +4,9 @@
 
 <br>
 
+<a href="https://hesm4tt.github.io/MusicalScraper/"><strong>Visit the website</strong></a>
+&nbsp;&nbsp;·&nbsp;&nbsp;
+
 <a href="https://github.com/hesm4tt/MusicalScraper/releases/latest"><img src="https://img.shields.io/github/v/release/hesm4tt/MusicalScraper?style=flat-square&color=ee4938&label=latest%20release" alt="Latest release"></a>
 <a href="https://github.com/hesm4tt/MusicalScraper/actions/workflows/release.yml"><img src="https://img.shields.io/github/actions/workflow/status/hesm4tt/MusicalScraper/release.yml?style=flat-square&label=builds" alt="Build status"></a>
 <a href="LICENSE"><img src="https://img.shields.io/github/license/hesm4tt/MusicalScraper?style=flat-square&color=ff9a24" alt="MIT license"></a>
