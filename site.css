@@ -205,7 +205,12 @@ h1 span { color: var(--red); }
   box-shadow: 0 24px 70px rgb(111 48 28 / 14%);
 }
 
-.hero-visual img { aspect-ratio: 3 / 2; object-fit: cover; }
+.hero-visual img {
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
 
 .hero-visual figcaption {
   margin: 12px 4px 0;
@@ -273,7 +278,12 @@ h2 {
   text-underline-offset: 4px;
 }
 
-.archive-visual img { aspect-ratio: 4 / 3; object-fit: cover; }
+.archive-visual img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: left center;
+  border: 1px solid var(--line);
+}
 
 .details-section { padding-block: 100px 108px; }
 
@@ -390,7 +400,7 @@ h2 {
   .archive-section { padding-block: 58px; }
   .archive-layout { grid-template-columns: 1fr; gap: 28px; }
   .archive-copy { max-width: 480px; }
-  .archive-visual img { aspect-ratio: 4 / 3; }
+  .archive-visual img { aspect-ratio: 1 / 1; }
   .details-section { padding-block: 64px; }
   .details-intro { margin-bottom: 32px; }
   .details-grid { grid-template-columns: 1fr; gap: 28px; }

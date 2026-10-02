@@ -10,8 +10,8 @@ on:
       - site.css
       - assets/icon.png
       - assets/social-preview.png
-      - assets/site-archive.jpg
-      - assets/site-hero.jpg
+      - assets/app-complete.png
+      - assets/app-profile.png
   workflow_dispatch:
 
 permissions:
@@ -40,7 +40,7 @@ jobs:
         run: |
           mkdir -p _site/assets
           cp index.html site.css .nojekyll _site/
-          cp assets/icon.png assets/social-preview.png assets/site-archive.jpg assets/site-hero.jpg _site/assets/
+          cp assets/icon.png assets/social-preview.png assets/app-complete.png assets/app-profile.png _site/assets/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
